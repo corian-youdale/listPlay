@@ -1,24 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { fetchFruits } from '../actions'
+import { fetchSongs } from '../actions'
 
 export class App extends React.Component {
   state = {
-    fruits: []
+    songs: []
   }
 
   componentDidMount () {
-    this.props.dispatch(fetchFruits())
+    this.props.dispatch(fetchSongs())
   }
 
   render () {
     return (
       <div className='app'>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
+        <h1>Fullstack Boilerplate - with Songs!</h1>
         <ul>
-          {this.props.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
+          {this.props.songs.map(song => (
+            <li key={song}>{song}</li>
           ))}
         </ul>
       </div>
@@ -28,7 +28,7 @@ export class App extends React.Component {
 
 function mapStateToProps (globalState) {
   return {
-    fruits: globalState.fruits
+    songs: globalState.songs
   }
 }
 
