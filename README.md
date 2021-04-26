@@ -1,10 +1,15 @@
 # listPlay
 
 POST name, url
+
 DISPLAY (current number of names/urls)
+
 BUTTON to start/compile playlist
+
 GET urls
+
 Display YT Playlist of URLS
+
 Display INPUT (dropdown list of all names) and SUBMIT guess button
 
 CALCULATE SCORES, DISPLAY SCORES, DISPLAY CORRECT ANSWERS
