@@ -13,3 +13,10 @@ export function getSongs () {
       return res.body.songs
     })
 }
+
+// export function getNames () {
+//     return request.get(rootUrl + '/songs')
+//     .then(res => {
+//         return res.body.names
+//     })
+// }

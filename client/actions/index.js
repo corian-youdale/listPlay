@@ -1,6 +1,8 @@
-import { getSongs } from '../apis/songs' 
+import { getSongs } from '../apis/songs'
+// import { getNames } from '../apis/songs'
 
 export const SET_SONGS = 'SET_SONGS'
+// export const SET_NAMES = 'SET_NAMES'
 
 export function setSongs (songs) {
   return {
@@ -8,6 +10,13 @@ export function setSongs (songs) {
     songs
   }
 }
+
+// export function setNames (names) {
+//   return {
+//     type: SET_NAMES,
+//     names
+//   }
+// }
 
 
 export function fetchSongs () {
@@ -19,3 +28,14 @@ export function fetchSongs () {
     })
   }
 }
+
+
+// export function fetchNames () {
+//   return dispatch => {
+//     return getNames()
+//     .then(names => {
+//       dispatch(setNames(names))
+//       return null
+//     })
+//   }
+// }
