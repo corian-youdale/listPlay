@@ -1,11 +1,24 @@
-# Fullstack boilerplate
+# listPlay
 
-## Getting Started
+POST name, url
+DISPLAY (current number of names/urls)
+BUTTON to start/compile playlist
+GET urls
+Display YT Playlist of URLS
+Display INPUT (dropdown list of all names) and SUBMIT guess button
 
-### From the Github UI
-See the instructions [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) to use Github's feature to create a new repo from a template.
+CALCULATE SCORES, DISPLAY SCORES, DISPLAY CORRECT ANSWERS
 
-### From the command line
+START AGAIN BUTTON
+
+STRETCH (Overview at the end for final guesses?)
+
+### Database (dbdiagram.io)
+![listPlay](https://user-images.githubusercontent.com/70251240/116020697-f45f6900-a69a-11eb-95e5-138e99878410.png)
+
+
+
+### Clone From The Command Line
 
 ```
 git clone https://github.com/dev-academy-challenges/boilerplate-fullstack [your-project-name]
@@ -18,12 +31,4 @@ You can find the server running on [http://localhost:3000](http://localhost:3000
 
 ## Details
 
-This repo includes:
-
-* a single, simple API endpoint (`/api/v1/fruits`)
-* a single React component (`<App />`)
-* an example database module (`server/db/fruits.js`)
-* an API client module (`client/apis/fruits.js`)
-* configuration for Jest and Enzyme (including JSDOM)
-* configuration for server-side debugging in VS Code
-* a single client-side test (`client/components/App.test.js`)
+A small game/activity for a group of people to create a youtube playlist and guess which person submitted each link as they listen/view.
