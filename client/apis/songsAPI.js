@@ -10,13 +10,8 @@ const rootUrl = '/api/v1'
 export function getSongs () {
   return request.get(rootUrl + '/songs')
     .then(res => {
+      console.log(res.body.songs)
+      // return res.body
       return res.body.songs
     })
 }
-
-// export function getNames () {
-//     return request.get(rootUrl + '/songs')
-//     .then(res => {
-//         return res.body.names
-//     })
-// }

@@ -1,7 +1,6 @@
 const express = require('express')
 
-const db = require('../db/Songs')
-const { req, res } = require('../server')
+const db = require('../db/songsDb')
 
 const router = express.Router()
 

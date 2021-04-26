@@ -11,7 +11,7 @@ export class App extends React.Component {
 
   componentDidMount () {
     this.props.dispatch(fetchSongs())
-    // this.props.dispatch(fetchNames())
+    this.props.dispatch(fetchNames())
   }
 
   render () {
@@ -23,11 +23,7 @@ export class App extends React.Component {
             <li key={song}>{song}</li>
           ))}
         </ul>
-        {/* <ul>
-          {this.props.names.map(name => (
-            <li key={name}>{name}</li>
-          ))}
-        </ul> */}
+       
        
         {/* form for submitting your song to the playlist */}
         <div>
