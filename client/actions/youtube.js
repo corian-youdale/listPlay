@@ -1,11 +1,16 @@
-import { google } from 'googleapis'
+//  import { gapi } from 'gapi-script'
+//https://medium.com/@augustinekwong/google-sign-in-for-reactjs-tutorial-1eb5d78ea2e6
 
-const oauth2Client = new google.auth.OAuth2(
-  process.env.CLIENT_ID,
-  process.env.CLIENT_SECRET,
-)
+ function authenticate() {
+  return window.gapi.auth2.getAuthInstance()
+      .signIn({scope: "https://www.googleapis.com/auth/youtube.force-ssl"})
+      .then(function() { console.log("Sign-in successful"); },
+            function(err) { console.error("Error signing in", err); });
+}
+
+// let auth2 = await loadAuth2(gapi, clientId, scopes)
 
 export const consoleMe = () => {
-
-    console.log("google")
+    console.log(window.gapi)
+    // authenticate()
 }
