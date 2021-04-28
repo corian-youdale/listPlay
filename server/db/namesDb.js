@@ -1,10 +1,8 @@
 const connection = require('./connection')
 
 function getNames (db = connection) {
-    return db('Songs').select()
-    
+    return db('Songs').select() 
 }
-
 
 // add new name to database
 function addName (newName, db = connection) {
@@ -18,7 +16,6 @@ function addName (newName, db = connection) {
     .then(newName => {
         return db('Songs')
         .insert(newName)
-
     })
 }
 
