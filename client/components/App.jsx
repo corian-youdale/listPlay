@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import { fetchNames, fetchSongs } from '../actions'
 import SongSubmit from './SongSubmit'
+import Player from './Player'
 
 export class App extends React.Component {
   // state = {
@@ -17,7 +18,10 @@ export class App extends React.Component {
 
   render () {
     return (
-     <SongSubmit />
+      <>
+        <SongSubmit />
+        <Player vidToRender={"o_9AqM5jz7c"}/>
+      </>
       // <div className='app'>
       //   <h1>Fullstack Boilerplate - with Songs!</h1>
       //   <ul>
