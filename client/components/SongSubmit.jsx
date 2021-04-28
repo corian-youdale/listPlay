@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { consoleMe } from '../actions/youtube'
 
 const SongSubmit = () => {
     const [ state, setState ] = useState({
@@ -6,10 +7,10 @@ const SongSubmit = () => {
         url: ''
     })
 
-    object = {
-        name:'',
-        age: '',
-    }
+    useEffect (() => {
+        console.log("I effected")
+        consoleMe()
+    },[])
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -19,11 +20,8 @@ const SongSubmit = () => {
         }))
     }
 
-
     return (
-        <form>
-            <h1>{state.name}</h1>
-            <h1>{state.url}</h1>
+            <form>
             <input value={state.name} name="name" onChange={handleChange}/>
             <input value={state.url} name="url" onChange={handleChange} />
         </form>
