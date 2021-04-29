@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { consoleMe } from '../actions/youtube'
+import { consoleMe, getPlaylist } from '../actions/youtube'
 
 const SongSubmit = () => {
     const [ state, setState ] = useState({
@@ -8,8 +8,22 @@ const SongSubmit = () => {
     })
 
     useEffect (() => {
-        console.log("I effected")
-        consoleMe()
+        console.log(window.gapi)
+        // consoleMe()
+       
+            // window.gapi.auth2({
+            //     client_id: process.env.CLIENT_ID
+            // }).then(() => {
+            //     window.gapi.signin2.render('my-signIn', {
+            //       'scope': 'profile email',
+            //       'width': 250,
+            //       'height': 50,
+            //       'longtitle': false,
+            //       'theme': 'dark',
+            //       'onsuccess': this.onSuccess,
+            //       'onfailure': this.onFailure
+            //     })
+            //   }) 
     },[])
 
     const handleChange = (e) => {
