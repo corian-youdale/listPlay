@@ -19,7 +19,7 @@ import request from 'superagent'
 const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems'
 
 export function getPlaylist (playlist = 'PLMRLNkTQP6q8xQhR-C0Bn-nVJr5eEZkaT') {
-    return request.get(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=${playlist}&key=${process.env.API_KEY}`)
+    return request.get(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet,contentDetails&playlistId=${playlist}&key=${process.env.API_KEY}`)
     .then(res => {
         console.log(res.body)
         return res.body
