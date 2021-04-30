@@ -19,6 +19,7 @@ const PlaylistDisplay = () => {
 }
 
 const returnTitleUrlData = (data) => {
+  console.log(data)
   return data.items.map((song) => {
     return {
       title: song.snippet.title,
