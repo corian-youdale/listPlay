@@ -1,8 +1,8 @@
 const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth20').Strategy
 
-const cli_ID = `${process.env.CLIENT_ID}`
-const cli_SC = `${process.env.CLIENT_SECRET}`
+// const cli_ID = `${process.env.CLIENT_ID}`
+// const cli_SC = `${process.env.CLIENT_SECRET}`
 
 passport.serializeUser((user, done) => {
     done(null, user.id);
@@ -17,9 +17,9 @@ passport.serializeUser((user, done) => {
 passport.use(
     new GoogleStrategy({
     //options for the strategy
-    clientID: '850706506498-nds9o5g32vq9r3tfp6i4k3erd1cih2co.apps.googleusercontent.com',
+    clientID: process.env.CLIENT_ID,
     callbackURL:'/auth/google/redirect',
-    clientSecret: 'OfO98uz1rq0qDx0OTkrNtcej',
+    clientSecret: process.env.CLIENT_SECRET,
 }, (accessToken, refreshToken, profile, done) => {
         //passport callback function
         // User.findOne({googleId: profile.id}).then((currentUser) => {
