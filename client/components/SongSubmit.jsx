@@ -8,8 +8,10 @@ const SongSubmit = () => {
     })
 
     useEffect (() => {
-        console.log("I effected")
-        consoleMe()
+        // console.log("I effected")
+        console.log(gapi)
+        console.log(window.gapi)
+        // consoleMe()
     },[])
 
     const handleChange = (e) => {

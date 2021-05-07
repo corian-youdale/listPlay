@@ -4,54 +4,41 @@ import { connect } from 'react-redux'
 import { fetchNames, fetchSongs } from '../actions'
 import SongSubmit from './SongSubmit'
 import Player from './Player'
+import GapiFunctions from './GapiFunctions'
 
 export class App extends React.Component {
-  // state = {
-  //   songs: [],
-  //   names: []
-  // }
 
-  // componentDidMount () {
-  //   this.props.dispatch(fetchSongs())
-  //   this.props.dispatch(fetchNames())
-  // }
+  loadYoutubeApi() {
+    const script = document.createElement("script")
+    script.src = "https://apis.google.com/js/client.js"
+  
+    script.onload = () => {
+      gapi.load('client', () => {
+        gapi.client.setApiKey(process.env.API_KEY)
+        gapi.client.load('youtube', 'v3', () => {
+          this.setState({ gapiReady: true })
+        })
+      })
+    }
+    document.body.appendChild(script)
+  }
+
+  componentDidMount() {
+    this.loadYoutubeApi()
+  }
 
   render () {
-    return (
-      <>
-        <SongSubmit />
-        <Player vidToRender={"o_9AqM5jz7c"}/>
-      </>
-      // <div className='app'>
-      //   <h1>Fullstack Boilerplate - with Songs!</h1>
-      //   <ul>
-      //     {this.props.songs.map(song => (
-      //       <li key={song}>{song}</li>
-      //     ))}
-      //   </ul>
-       
-       
-      //   {/* form for submitting your song to the playlist */}
-      //   <div>
-      //     <form method="post">
-      //       Your Name:
-      //     <input type="text" name="name"/>
-      //       Your Youtube URL:
-      //       <input type="url" name="URL"/>
-      //       <input type="submit" name="submit"/>
-      //     </form>
-
-      //     {/* Number of songs submitted */}
-      //       <p>
-      //         {/* displays the number of songs submitted to the playlist */}
-      //       </p>
-
-      //      {/* Button to start the game/ make the playlist - needs pop up warning that game will now start with X players */}
-      //       <button type="button">
-      //         Start the Game!
-      //       </button>
-      //   </div>
-      // </div>
+    if (this.state?.gapiReady){
+      return (
+        <>
+          <SongSubmit />
+          <GapiFunctions />
+          {/* <Player vidToRender={"o_9AqM5jz7c"}/> */}
+        </>
+      )
+    }
+    return(
+      <h1>Loading ...</h1>
     )
   }
 }
